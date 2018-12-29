@@ -1,12 +1,12 @@
 ---
-title: Composer笔记
+title: Composer 笔记
 date: 2018-12-18 12:30:29
 updated: 2018-12-18 12:30:29 
 mathjax: false
 categories: 
 tags:
-typora-root-url: .
-typora-copy-images-to: .
+typora-root-url: Composer
+typora-copy-images-to: Composer
 top: 
 ---
 
@@ -15,7 +15,7 @@ top:
 
 ## 前言
 
-![img](assets/wpsC3D.tmp.jpg) 
+![img](wpsC3D.tmp.jpg) 
 
 当我们在做项目开发的时候，我们不可避免的需要进行一些`通用性`的功能，例如文件上传、缩略图的处理、二维码生成等等；当遇到这些需求后我们可以自己进行代码编写，函数封装、类库封装等操作，然后形成自己的代码库，以便下一次使用，但是自己写出来的代码毕竟经受的检验较少，所以我们一般会去网上搜寻相关的类库进行使用（便捷性），但是如果是在网上搜索的代码安全性和健壮性又很难得到保障，则这个时候有个我们迫切的需要一个类似nodejs里面的npm、python里面的pip、java里面的maven、linux下yum、apt-get等这样的包管理器，可以帮我们去管理这些类库，让开发者专门于业务的开发。哪里有需求，则哪里就有活雷锋，这个时候PHP的类库管理工具composer横空出生了！
 
@@ -71,13 +71,13 @@ http://psr.phphub.org/
 
 答： 百度查询…
 
-![img](assets/wpsC4E.tmp.jpg) 
+![img](wpsC4E.tmp.jpg) 
 
 
 
 在互联网上存在一个[PHP的应用商店](https://packagist.org/)，提供了PHP开发过程中常见的类库（需要遵循psr规范）。但是该网站只是提供一个类库对应的描述信息，以及下载地址。最终的类库文件的源码还是存在**GitHub代码托管**平台上的。该商店只是提供了对应的链接，下载的时候还是去GitHub上面进行下载。
 
-![img](assets/wpsC5E.tmp.jpg) 
+![img](wpsC5E.tmp.jpg) 
 
  
 
@@ -129,17 +129,17 @@ Composer 是 PHP 的一个包==依赖管理工具== ， 不是一个包管理�
 
   去composer官网( https://getcomposer.org/download/ )下载`Composer-setup.exe`进行在线安装，由于此软件安装需要联网且服务器在国外安装很难成功，所以这里推荐使用下面第二种方式进行安装。
 
-  ![](assets/image2.png)
+  ![](image2.png)
 
 * \[**==推荐==**\]第二种方式
 
   去官网https://getcomposer.org/download 下载`composer.phar`文件。
 
-  ![](assets/image3.png)
+  ![](image3.png)
 
   找到并进入 PHP 的安装目录,将下载的`composer.phar` 复制到 ==PHP 的安装目录==下面，也就是和 php.exe 在同一级目录。
 
-  ![](assets/image4.png)
+  ![](image4.png)
 
   在 PHP 安装目录（如，`D:\phpStudy\php\php-5.6.27-nts`）下新建一个` composer.bat `文件，并将下列代码保存到此文件中。
 
@@ -155,21 +155,21 @@ Composer 是 PHP 的一个包==依赖管理工具== ， 不是一个包管理�
 
  进入对应php版本目录(`D:\phpStudy\php\php-5.6.27-nts`)中输入`composer`指令，出现如下提示代表安装成功：
 
-![](assets/image5.png)
+![](image5.png)
 
   
 
   为了可以全局（任意位置）访问composer，可以把php.exe的所在目录（`D:\phpStudy\php\php-5.6.27-nts`）定义在环境变量path选项中。
 
-  ![](assets/image6.png)
+  ![](image6.png)
 
   设置好后输入`php -v`  即可看到php版本号。
 
-  ![](assets/image7.png)
+  ![](image7.png)
 
   cmd中任意位置输入`composer`指令：
 
-  ![](assets/image8.png)
+  ![](image8.png)
 
 
 
@@ -188,11 +188,11 @@ Composer 是 PHP 的一个包==依赖管理工具== ， 不是一个包管理�
 
 由于composer需要去网址为https://packagist.org 获取代码库地址，再通过地址去github上去下载代码到我们项目本地，由于这两个地址服务器都在国外，访问比较慢，也不稳定。
 
-![](assets/image9.png)
+![](image9.png)
 
 **镜像原理**
 
-![img](/assets/wpsDF5.tmp.jpg) 
+![img](wpsDF5.tmp.jpg) 
 
  
 
@@ -214,7 +214,7 @@ composer config -g repo.packagist composer https://packagist.laravel-china.org
 composer config -g repo.packagist composer https://packagist.phpcomposer.com
 ```
 
-![](assets/image10.png)
+![](image10.png)
 
 如上，参看composer配置命令，可查看composer配置保存的路径，全局的默认在当前用户文件夹下。
 
@@ -232,7 +232,7 @@ composer config  repo.packagist composer https://packagist.phpcomposer.com
 
 在composer做类库的管理过程中，我们先需要去PHP的应用商品。去查看开发过程中需要的类库。然后使用composer进行下载。
 
- ![1537667106801](assets/1537667106801.png)
+ ![1537667106801](1537667106801.png)
 
 
 
@@ -257,7 +257,7 @@ composer config  repo.packagist composer https://packagist.phpcomposer.com
 
 注意：版本号需要根据packagist.org网站提供的版本进行指定
 
-![img](assets/wpsCA3.tmp.jpg) 
+![img](wpsCA3.tmp.jpg) 
 
 
 
@@ -269,7 +269,7 @@ composer config  repo.packagist composer https://packagist.phpcomposer.com
 
 现在的意思是安装laravel5.4.15这个版本，并且把该包安装到 mylaravel文件夹下。
 
-![img](assets/wpsCB3.tmp.jpg) 
+![img](wpsCB3.tmp.jpg) 
 
  
 
@@ -285,7 +285,7 @@ composer config  repo.packagist composer https://packagist.phpcomposer.com
 
 该命令是用来安装项目开发中的依赖文件，例如上传类库、验证码类库。
 
-![img](assets/wpsCC4.tmp.jpg) 
+![img](wpsCC4.tmp.jpg) 
 
 ```
 composer require 厂商/包名[=版本号]
@@ -311,13 +311,13 @@ composer require 厂商/包名[=版本号]
 
 该文件是用来记录composer管理的类库信息，以及项目的信息、作者、联系方式....
 
-![1537660787366](assets/1537660787366.png)
+![1537660787366](1537660787366.png)
 
 
 
 ## composer.lock文件
 
-![1537660761864](assets/1537660761864.png)
+![1537660761864](1537660761864.png)
 
 主要是为了防止项目部署的时候，去下载最新的版本导致不兼容，在安装之后，需要把当前版本锁定起来。以后部署的时候，还是使用当时所锁定的版本，如果希望使用最新的版本，而不是锁定的版本，只需要删除该文件即可。
 
@@ -325,7 +325,7 @@ composer require 厂商/包名[=版本号]
 
 ## composer install 命令
 
-![1537660827975](assets/1537660827975.png)
+![1537660827975](1537660827975.png)
 
 以后去公司之后，如果从git或者是svn上面检出了laravel项目，则第一步应该是先去项目的根目录下执行 **composer install** 去根据 composer.lock 或者composer.json 文件下载项目开发中的依赖信息。
 
@@ -350,7 +350,7 @@ https://docs.phpcomposer.com/01-basic-usage.html#composer.json-Project-Setup
 
 1. 指定版本
 
-![img](assets/wpsCE7.tmp.jpg) 
+![img](wpsCE7.tmp.jpg) 
 
  
 
@@ -360,15 +360,15 @@ https://docs.phpcomposer.com/01-basic-usage.html#composer.json-Project-Setup
 > composer install
 ```
 
-![1537660855716](assets/1537660855716.png)
+![1537660855716](1537660855716.png)
 
 删除composer.lock文件，重新执行 `composer install` 命令
 
-![1537660871530](assets/1537660871530.png)
+![1537660871530](1537660871530.png)
 
 安装后
 
-![1537660908979](assets/1537660908979.png)
+![1537660908979](1537660908979.png)
 
  
 
@@ -376,19 +376,19 @@ https://docs.phpcomposer.com/01-basic-usage.html#composer.json-Project-Setup
 
 如果我们在开发过程中，现在希望某个类库可以升级
 
-![img](assets/wpsD1A.tmp.jpg) 
+![img](wpsD1A.tmp.jpg) 
 
  
 
 1. 修改一个composer.json里面的信息
 
-![img](assets/wpsD1B.tmp.jpg) 
+![img](wpsD1B.tmp.jpg) 
 
  
 
 2. `composer update`进行更新
 
-![img](assets/wpsD2C.tmp.jpg) 
+![img](wpsD2C.tmp.jpg) 
 
 
 
@@ -470,25 +470,25 @@ https://docs.phpcomposer.com/01-basic-usage.html#composer.json-Project-Setup
 
 1. 在网站进行搜索ci框架
 
-![img](assets/wpsD3C.tmp.jpg) 
+![img](wpsD3C.tmp.jpg) 
 
  
 
 2. 使用`composer create-project` 进行安装
 
-![img](assets/wpsD4D.tmp.jpg) 
+![img](wpsD4D.tmp.jpg) 
 
  
 
 3. 查看
 
-![img](assets/wpsD5E.tmp.jpg) 
+![img](wpsD5E.tmp.jpg) 
 
  
 
 4. 启动一下
 
-![1537660973121](assets/1537660973121.png)
+![1537660973121](1537660973121.png)
 
 ```
 > php -S localhost:8080 -t . 
@@ -503,7 +503,7 @@ https://docs.phpcomposer.com/01-basic-usage.html#composer.json-Project-Setup
 
 5. 浏览器查看
 
-![1537661008485](assets/1537661008485.png)
+![1537661008485](1537661008485.png)
 
 
 
@@ -521,17 +521,17 @@ https://docs.phpcomposer.com/01-basic-usage.html#composer.json-Project-Setup
 
 1. 查看下载并monolog
 
-![img](assets/wpsD91.tmp.jpg) 
+![img](wpsD91.tmp.jpg) 
 
  
 
 2. 查看安装后的目录结构
 
-![img](assets/wpsDA1.tmp.jpg) 
+![img](wpsDA1.tmp.jpg) 
 
 3. 使用
 
-![img](assets/wpsDA2.tmp.jpg) 
+![img](wpsDA2.tmp.jpg) 
 
 一般来说类库的使用方式，需要查看文档。
 
@@ -551,7 +551,7 @@ https://docs.phpcomposer.com/01-basic-usage.html#composer.json-Project-Setup
 
 注意：在我们使用composer管理类库的时候，存在一些版本的配置信息。
 
-![img](assets/wpsDB3.tmp.jpg) 
+![img](wpsDB3.tmp.jpg) 
 
  
 
@@ -567,7 +567,7 @@ https://docs.phpcomposer.com/01-basic-usage.html#composer.json-Project-Setup
 
  
 
-![img](assets/wpsDC3.tmp.jpg) 
+![img](wpsDC3.tmp.jpg) 
 
  
 
@@ -589,7 +589,7 @@ https://docs.phpcomposer.com/01-basic-usage.html#composer.json-Project-Setup
 
 ^1.2.3 代表含义 代表大于当前版本，但是小于主版本号
 
-![img](assets/wpsDD4.tmp.jpg) 
+![img](wpsDD4.tmp.jpg) 
 
  
 
